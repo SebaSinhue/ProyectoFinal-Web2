@@ -11,7 +11,7 @@ Permite:
 
 ---
 
-## 🧰 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Node.js** (lado servidor)
 - **Express** (framework para rutas y middleware)
@@ -23,7 +23,7 @@ Permite:
 
 ---
 
-## 📁 Estructura del proyecto (resumen)
+## Estructura del proyecto (resumen)
 
 ```text
 ProyectoFinal-Web2/
