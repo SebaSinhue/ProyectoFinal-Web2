@@ -10,19 +10,6 @@ Permite:
 - Crear, leer, editar y eliminar registros (CRUD) solo si el usuario está autenticado.
 
 ---
-
-## Tecnologías utilizadas
-
-- **Node.js** (lado servidor)
-- **Express** (framework para rutas y middleware)
-- **MySQL** (base de datos relacional)
-- **EJS** (motor de plantillas para las vistas)
-- **express-session** (manejo de sesiones)
-- **dotenv** (carga de variables de entorno)
-- **HTML, CSS y JavaScript** (interfaz y comportamiento en el navegador)
-
----
-
 ## Estructura del proyecto (resumen)
 
 ```text
