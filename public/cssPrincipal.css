@@ -1,0 +1,388 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f4f4f5; 
+}
+
+label {
+  font-size: 0.9rem;
+  display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #d1d5db;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.btn-primario {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primario:hover {
+  background: #1d4ed8;
+}
+
+.btn-secundario {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-secundario:hover {
+  background: #4b5563;
+}
+
+.btn-peligro {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-peligro:hover {
+  background: #b91c1c;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tabla th,
+.tabla td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabla thead {
+  background-color: #e5e7eb;
+}
+
+.col-acciones {
+  width: 220px;
+}
+
+.acciones-lectura,
+.form-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.alerta {
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.alerta.error {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.texto-pequeno {
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.texto-centro {
+  text-align: center;
+}
+
+
+.oculto {
+  display: none !important;
+}
+
+.panel-body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #1d4ed8 0, #020617 45%, #020617 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  padding: 1.5rem;
+}
+
+.panel-card {
+  background: #f9fafb;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.header-usuario {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.panel-content {
+  padding: 1.8rem 2rem 2rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.panel .tabla {
+  margin-top: 1.2rem;
+}
+
+.panel .texto-centro {
+  margin-top: 1.5rem;
+}
+
+
+.form-agregar {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1.5rem;
+}
+
+.campos-agregar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.campos-agregar label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.campos-agregar input {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #d1d5db;
+}
+
+
+.botones-agregar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem; 
+}
+
+
+
+.auth-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #1d4ed8 0, #020617 45%, #020617 100%);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-wrapper {
+  width: 100%;
+  max-width: 960px;
+  padding: 1.5rem;
+}
+
+
+.auth-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  background: rgba(15, 23, 42, 0.96);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+
+.auth-side-info {
+  padding: 2.2rem 2.4rem;
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.45), transparent 55%);
+  border-right: 1px solid rgba(30, 64, 175, 0.5);
+}
+
+.auth-title {
+  margin: 0 0 1rem;
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.auth-title span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.auth-text {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+.auth-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  color: #a5b4fc;
+}
+
+.auth-list li + li {
+  margin-top: 0.25rem;
+}
+
+
+.auth-side-form {
+  padding: 2.2rem 2.4rem;
+  background: rgba(15, 23, 42, 0.96);
+}
+
+.auth-form-title {
+  margin: 0 0 1.2rem;
+  font-size: 1.3rem;
+}
+
+.auth-error {
+  margin-bottom: 1rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.auth-field label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: #e5e7eb;
+}
+
+.auth-field input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background-color: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.auth-field input::placeholder {
+  color: #6b7280;
+}
+
+.auth-field input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5);
+}
+
+.auth-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  font-weight: 500;
+}
+
+.auth-footer-text {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.auth-footer-text a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.auth-footer-text a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .auth-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .auth-side-info {
+    display: none;
+  }
+
+  .auth-side-form {
+    padding: 1.8rem 1.5rem;
+  }
+}
+
+
+
+.auth-body-registro {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.auth-body-registro .auth-wrapper {
+  width: 100%;
+  max-width: 720px;  
+  padding: 1.5rem;
+}
+
+.auth-card-registro {
+  display: block;     
+  width: 100%;
+  padding: 2.4rem 2.8rem 2.2rem;
+}

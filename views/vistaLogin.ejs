@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="/cssPrincipal.css">
+</head>
+<body class="auth-body">
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-side auth-side-info">
+                <h1 class="auth-title">Proyecto CRUD<br><span>NodeJS · Express · MySQL</span></h1>
+                <p class="auth-text">
+                    Bienvenido al panel de registros.  
+                    Primero debes iniciar sesión con tu usuario registrado para poder
+                    acceder a la lista y administrar los registros.
+                </p>
+                <ul class="auth-list">
+                    <li>Login con validación en servidor</li>
+                    <li>Control de acceso a la lista</li>
+                    <li>CRUD completo sobre la base de datos</li>
+                </ul>
+            </div>
+
+            <div class="auth-side auth-side-form">
+                <h2 class="auth-form-title">Iniciar sesión</h2>
+                <% if (error) { %>
+                    <div class="alerta error auth-error"><%= error %></div>
+                <% } %>
+
+                <form action="/login" method="post" class="auth-form">
+                    <div class="auth-field">
+                        <label for="username">Usuario</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Ingresa tu usuario"
+                            required
+                        >
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="contrasena">Contraseña</label>
+                        <input
+                            type="password"
+                            id="contrasena"
+                            name="contrasena"
+                            placeholder="Ingresa tu contraseña"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primario auth-btn">
+                        Entrar al sistema
+                    </button>
+                </form>
+
+                <p class="auth-footer-text">
+                    ¿Todavía no tienes usuario?
+                    <a href="/registro">Crear una cuenta nueva</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

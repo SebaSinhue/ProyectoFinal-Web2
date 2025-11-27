@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/cssPrincipal.css">
+    <title>Panel de lista</title>
+</head>
+<body class="panel-body">
+    <div class="panel-wrapper">
+        <div class="panel-card">
+            <header class="header">
+                <h1>Panel de registros</h1>
+                <div class="header-usuario">
+                    <% if (usuario) { %>
+                        <span>Hola, <strong><%= usuario.nombre %></strong></span>
+                        <a href="/logout" class="btn btn-secundario">Cerrar sesion</a>
+                    <% } %>
+                </div>
+            </header>
+
+            <main class="panel-content">
+                <section class="panel">
+                    <h2>Registros en la lista</h2>
+
+                    <form id="form-agregar" class="form-agregar" action="/lista/agregar" method="post">
+                        <div class="campos-agregar">
+                            <div>
+                                <label for="titulo">Nombre</label>
+                                <input
+                                    type="text"
+                                    id="titulo"
+                                    name="titulo"
+                                    placeholder="Ingresa el nombre"
+                                    required
+                                >
+                            </div>
+                            <div>
+                                <label for="correo">Correo electrónico</label>
+                                <input
+                                    type="email"
+                                    id="correo"
+                                    name="correo"
+                                    placeholder="usuario@ejemplo.com"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="botones-agregar">
+                            <button type="submit" class="btn btn-primario">
+                                Guardar nuevo registro
+                            </button>   
+                        </div>      
+                    </form>
+
+                    <% if (registros.length === 0) { %>
+                        <p class="texto-centro">No existen registros</p>
+                    <% } else { %>
+                        <table class="tabla">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Correo electrónico</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody> 
+                                <% registros.forEach((registro) => { %>
+                                    <tr data-id="<%= registro.id %>">
+                                        <td><%= registro.id %></td>
+
+                                        <td>
+                                            <span class="texto-lectura"><%= registro.titulo %></span>
+
+                                            <input 
+                                                class="campo-edicion oculto"
+                                                type="text"
+                                                name="titulo"
+                                                value="<%= registro.titulo %>"
+                                                form="form-<%= registro.id %>"
+                                                required
+                                            >
+                                        </td>
+
+                                        <td>
+                                            <span class="texto-lectura"><%= registro.descripcion %></span>
+
+                                            <input 
+                                                class="campo-edicion oculto"
+                                                type="email"
+                                                name="correo"
+                                                value="<%= registro.descripcion %>"
+                                                form="form-<%= registro.id %>"
+                                                required
+                                            >
+                                        </td>
+
+                                        <td class="col-acciones">
+                                            <div class="acciones-lectura">
+                                                <button type="button" class="btn btn-secundario btn-editar">
+                                                    Editar
+                                                </button>
+
+                                                <form action="/lista/eliminar/<%= registro.id %>" method="post" class="form-inline">
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-peligro"
+                                                        onclick="return confirm('¿Deseas eliminar el registro?');"
+                                                    >
+                                                        Eliminar
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <form 
+                                                id="form-<%= registro.id %>"
+                                                class="form-inline form-edicion oculto"
+                                                action="/lista/editar/<%= registro.id %>"
+                                                method="post"
+                                            >
+                                                <button type="submit" class="btn btn-primario btn-guardar">
+                                                    Guardar
+                                                </button>
+                                                <button type="button" class="btn btn-secundario btn-cancelar">
+                                                    Cancelar
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    <% } %>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="/js/controlLista.js"></script>
+</body>
+</html>

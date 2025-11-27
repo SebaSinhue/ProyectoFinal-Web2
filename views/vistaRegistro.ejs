@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+    <link rel="stylesheet" href="/cssPrincipal.css">
+</head>
+<body class="auth-body auth-body-registro">
+    <div class="auth-wrapper">
+        <div class="auth-card auth-card-registro">
+            <h2 class="auth-form-title">Crear nuevo usuario</h2>
+
+            <% if (error) { %>
+                <div class="alerta error auth-error"><%= error %></div>
+            <% } %>
+
+            <form action="/registro" method="post" class="auth-form">
+                <div class="auth-field">
+                    <label for="nombre">Nombre completo</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Ingresa el nombre completo"
+                        required
+                    >
+                </div>
+
+                <div class="auth-field">
+                    <label for="username">Usuario</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Nombre de usuario para iniciar sesión"
+                        required
+                    >
+                </div>
+
+                <div class="auth-field">
+                    <label for="contrasena">Contraseña</label>
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        placeholder="Define una contraseña"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primario auth-btn">
+                    Guardar usuario
+                </button>
+            </form>
+
+            <p class="auth-footer-text">
+                ¿Ya tienes una cuenta?
+                <a href="/login">Volver al inicio de sesión</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
